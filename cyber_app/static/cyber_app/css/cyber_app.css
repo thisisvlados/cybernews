@@ -1,0 +1,89 @@
+body {
+    background: #F5F5DC;
+}
+
+.header {
+    background: black;
+    text-align: left;
+    position: relative;
+    bottom: 0px;
+}
+
+.header img {
+    width: 150px;
+    float: left;
+    position: relative;
+    top: 33px;
+}
+
+header a {
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    font-family: Trebuchet MS, sans-serif;
+}
+
+
+header ul {list-style: none}
+header ul li {
+    display: inline-block;
+    margin: 20px;
+}
+header ul a:hover {
+    color: #F5F5DC;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left
+    color: white;
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+main .features h1 {font-size: 50px;}
+main .features p {max-width: 400px; margin: 20px auto}
+
+.alert-warning {
+    float: left;
+    clear: both;
+
+    margin: 25px;
+    text-align: left;
+}
+
+.parent {
+    width: 400px;
+    margin: auto;
+}
+
+.left, .right {
+    display: inline-block;
+    //display: inline;
+    //zoom: 1;
+    width: 100%;
+    margin-right: -100%;
+    vertical-align: bottom;
+}
+.right {
+    text-align: right;
+}
+.left a, .right a { display: inline-block; position: relative; }
+.left a { width: 120px; height: 80px; background: #11ffee00;; top:-7px; text-align: center;}
+.right a { width: 100px; height: 100px; background: #11ffee00; top:12px; right: 200px; }
+
+header ul li button{
+    padding: 0;
+    margin: -15px;
+    box-sizing: border-box;
+}
+
+form {
+    width: 500px;
+    margin-top: 75px;
+    display: inline-block; position: center;
+
+}

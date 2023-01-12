@@ -1,0 +1,36 @@
+{% extends 'cyber_app/layout.html' %}
+{% load static %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="features">
+        <h1>{{ new.title }}</h1>
+        <p>{{ new.full_text }}</p>
+        <p>{{ new.date }}</p>
+        <a href="{% url 'news_update' new.id %}" class="btn btn-danger">Редактировать</a>
+        <a href="{% url 'news_delete' new.id %}" class="btn btn-danger">Удалить</a>
+        <p><a href="{% url 'like' new.pk %}"><img src="{% static 'cyber_news/img/like.png' %}" width="25px" height="25px"></a>{{ new.likes }}</p>
+         {% if user.is_active %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    {% else %}
+        <h4>Что бы оставить комментарий авторизуйтесь</h4>
+    {% endif %}
+        <h4>Комментарии:</h4>
+     {% for comment in comments %}
+        Пользователь - {{ comment.user }}<br>
+        {{ comment.text }} <br>
+        Добавлен - {{ comment.created }}<br><br>
+     {% endfor %}
+{#    {% for comment in new.comments_set.all %}#}
+{#        Пользователь - {{ comment.user }}<br>#}
+{#        {{ comment.text }} <br>#}
+{#        Добавлен - {{ comment.created }}<br><br>#}
+{#    {% endfor %}#}
+  </div>
+{% endblock content %}

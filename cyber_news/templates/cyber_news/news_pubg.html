@@ -1,0 +1,21 @@
+{% extends 'cyber_app/layout.html' %}
+{% block title %}Главные новости{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Главные новости</h1>
+        {% if news_pubg %}
+            {% for el in news_pubg %}
+                <div class="parent">
+                    <div class="alert alert-warning">
+                        <h3>{{ el.title }}</h3>
+                        <p>{{ el.anons }}</p>
+                        <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей!</p>
+        {% endif %}
+    </div>
+{% endblock %}

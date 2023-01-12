@@ -1,0 +1,13 @@
+{% extends 'cyber_app/layout.html' %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+    <div class="features">
+    <h1>Вход</h1>
+    <p>Пожалуйста, используйте следующую форму для входа. Если у вас нет учетной записи <a href="{% url 'register' %}">Регистрация</a></p>
+    <form action="." method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Войти"></p>
+    </form>
+    </div>
+{% endblock %}
