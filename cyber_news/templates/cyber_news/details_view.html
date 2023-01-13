@@ -1,12 +1,18 @@
 {% extends 'cyber_app/layout.html' %}
 {% load static %}
 
+
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block content %}
 
     <div class="features">
         <h1>{{ new.title }}</h1>
+        <div>
+            {% if new.img %}
+                <img src="{{ MEDIA_URL }}{{ new.img.url }}" width="400" height="400">
+            {% endif %}
+        </div>
         <p>{{ new.full_text }}</p>
         <p>{{ new.date }}</p>
         <a href="{% url 'news_update' new.id %}" class="btn btn-danger">Редактировать</a>

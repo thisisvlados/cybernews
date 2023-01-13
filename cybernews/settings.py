@@ -132,3 +132,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'cyber_app/static'), )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS=["http://127.0.0.1/8000/"]
+
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

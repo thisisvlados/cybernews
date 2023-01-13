@@ -22,6 +22,7 @@ class News(models.Model):
     full_text = models.TextField('Статья')
     date = models.DateTimeField('Дата публикации')
     likes = models.IntegerField(default=0)
+    img = models.ImageField(null=True, blank=True, upload_to="images/", verbose_name="Изображение")
 
     def __str__(self):
         return self.title

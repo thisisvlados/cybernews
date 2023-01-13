@@ -1,11 +1,11 @@
 from .models import News, Comments
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, Select
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, Select, ClearableFileInput
 
 
 class NewsForm(ModelForm):
     class Meta:
         model = News
-        fields = ['category', 'title', 'anons', 'date', 'full_text']
+        fields = ['category', 'title', 'anons', 'date', 'full_text', 'img']
         choice_category = News.category
 
         widgets = {
@@ -33,7 +33,8 @@ class NewsForm(ModelForm):
             "full_text": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Текст статьи'
-            })
+            }),
+
         }
 
 

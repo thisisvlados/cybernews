@@ -58,7 +58,7 @@ def AddLike(request, pk):
 def news_create(request):
     error = ''
     if request.method == 'POST':
-        form = NewsForm(request.POST)
+        form = NewsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('news')
